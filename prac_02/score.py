@@ -18,12 +18,16 @@ else
 
 def main():
     score = get_valid_score()
+    grade = determine_grade(score)
+
+def determine_grade(score):
     if score > 50:
-        print("Passable")
+        grade = "Passable"
     elif score > 90:
-        print("Excellent")
+        grade = "Excellent"
     else:
-        print("Bad")
+        grade = "Bad"
+    return grade
 
 def get_valid_score():
     score = float(input("Enter score: "))
