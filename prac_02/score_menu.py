@@ -35,6 +35,9 @@ function determine_grade(score)
     else
         grade = "Bad"
     return grade
+
+function print_line(score)
+    display score * "*"
 """
 MINIMUM_SCORE = 0
 MAXIMUM_SCORE = 100
@@ -79,4 +82,7 @@ def determine_grade(score):
         grade = "Bad"
     return grade
 
+def print_line(score):
+    """print number of stars based on score"""
+    print(int(score) * "*")
 main()
