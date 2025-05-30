@@ -1,7 +1,4 @@
 """
-CP1404/CP5632 - Practical
-Broken program to determine score status
-
 MINIMUM_SCORE = 0
 MAXIMUM_SCORE = 100
 EXCELLENT_THRESHOLD = 90
@@ -9,12 +6,8 @@ PASS_THRESHOLD = 50
 
 function main()
     score = validate_score()
-    if score > EXCELLENT_THRESHOLD
-        display "Excellent"
-    else if score > PASS_THRESHOLD
-        display "Passable"
-    else
-        display "Bad"
+    result = determine_result(score)
+    display score, result
 
 function validate_score()
     score = float(input("Enter score: "))
@@ -22,6 +15,15 @@ function validate_score()
         display "Invalid score"
         score = float(input("Enter score: "))
     return score
+
+function determine_result(score)
+    if score >= EXCELLENT_THRESHOLD
+        result = "Excellent"
+    else if score >= PASS_THRESHOLD
+        result = "Passable"
+    else:
+        result = "Bad"
+    return result
 """
 
 MINIMUM_SCORE = 0
@@ -29,18 +31,26 @@ MAXIMUM_SCORE = 100
 EXCELLENT_THRESHOLD = 90
 PASS_THRESHOLD = 50
 def main():
+    """Get score and determine result based and print"""
     score = validate_score()
-    if score > EXCELLENT_THRESHOLD:
-        print("Excellent")
-    elif score > PASS_THRESHOLD:
-        print("Passable")
-    else:
-        print("Bad")
+    result = determine_result(score)
+    print(f"{score} - {result}")
 
 def validate_score():
+    """Get valid score"""
     score = float(input("Enter score: "))
     while score < MINIMUM_SCORE or score > MAXIMUM_SCORE:
         print("Invalid score")
         score = float(input("Enter score: "))
     return score
+
+def determine_result(score):
+    """Determine result based on score"""
+    if score >= EXCELLENT_THRESHOLD:
+        result = "Excellent"
+    elif score >= PASS_THRESHOLD:
+        result = "Passable"
+    else:
+        result = "Bad"
+    return result
 main()
