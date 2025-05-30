@@ -19,8 +19,6 @@ else
     display "Bad"
 """
 
-# TODO: Fix this!
-
 MINIMUM_SCORE = 0
 MAXIMUM_SCORE = 100
 EXCELLENT_THRESHOLD = 90
