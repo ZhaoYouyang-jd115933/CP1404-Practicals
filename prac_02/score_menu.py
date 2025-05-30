@@ -5,6 +5,7 @@ EXCELLENT_THRESHOLD = 90
 PASS_THRESHOLD = 50
 
 function main()
+    score = get_valid_score()
     display menu
     get choice
     while choice not equal to "Q"
@@ -48,6 +49,7 @@ MENU = "(G)et a valid score\n(P)rint result\n(S)how stars\n(Q)uit"
 
 def main():
     """Displays a menu and performs tasks based on the user's selection"""
+    score = get_valid_score()
     print(MENU)
     choice = input("Enter choice: ").upper()
     while choice != "Q":
