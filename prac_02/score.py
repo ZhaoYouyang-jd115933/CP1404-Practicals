@@ -4,7 +4,7 @@ EXCELLENT_THRESHOLD = 90
 PASS_THRESHOLD = 50
 
 def main():
-    """Get score, determine grade and get random_score, random_grade"""
+    """Get score and determine grade"""
     score = get_valid_score()
     grade = determine_grade(score)
     print(f"{score} - {grade}")
