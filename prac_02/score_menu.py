@@ -43,4 +43,11 @@ def main():
         print(MENU)
         choice = input("Enter choice: ").upper()
     print("farewell")
+
+def get_valid_score():
+    score = float(input("Enter score: "))
+    while score < MINIMUM_SCORE or score > MAXIMUM_SCORE:
+        print("Invalid score")
+        score = float(input("Enter score: "))
+    return score
 main()
