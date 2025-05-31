@@ -25,7 +25,7 @@ function determine_result(score)
         result = "Excellent"
     else if score >= PASS_THRESHOLD
         result = "Passable"
-    else:
+    else
         result = "Bad"
     return result
 """
