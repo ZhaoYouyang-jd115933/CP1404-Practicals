@@ -5,6 +5,7 @@ Various examples of using Python string formatting.
 Want to read more about it?
 https://docs.python.org/3/library/string.html#formatstrings
 """
+import math
 
 name = "Gibson L-5 CES"
 year = 1922
@@ -34,7 +35,7 @@ for i, number in enumerate(numbers, 1):
 
 # TODO: Use f-string formatting to produce the output:
 # 1922 Gibson L-5 CES for about $16,036!
-
+print(f"{year} {name} for about ${math.ceil(cost)}!")
 # TODO: Using a for loop with the range function and f-string formatting,
 # produce the following right-aligned output (DO NOT use a list):
 # 2 ^ 0 is    1
