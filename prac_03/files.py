@@ -10,3 +10,5 @@ out_file.close()
 # the user's input variable! Use open and close for this question.
 in_file = open(FILENAME, "r")
 name = in_file.read().strip()
+print(f"Hi {name}!")
+in_file.close()
