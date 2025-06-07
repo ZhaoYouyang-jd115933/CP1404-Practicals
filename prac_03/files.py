@@ -12,3 +12,14 @@ in_file = open(FILENAME, "r")
 name = in_file.read().strip()
 print(f"Hi {name}!")
 in_file.close()
+# 3.Create a text file called numbers.txt and save it in your prac directory. Put the following three numbers on
+# separate lines in the file and save it:
+# 17
+# 42
+# 400
+# Write code that opens numbers.txt, reads only the first two numbers, adds them together then prints the
+# result, which should be... 59. Use with instead of open and close for this question.
+FILENAME = "numbers.txt"
+with open(FILENAME, "r") as in_file:
+    first_number = int(in_file.readline())
+    second_number = int(in_file.readline())
