@@ -25,3 +25,10 @@ with open(FILENAME, "r") as in_file:
     second_number = int(in_file.readline())
     total_number = first_number + second_number
     print(total_number)
+# 4.Now write a fourth block of code that prints the total for all lines in numbers.txt. This should work for a file with
+# any number of numbers. Use with instead of open and close for this question.
+total = 0
+with open(FILENAME, "r") as in_file:
+    for line in in_file:
+        total = total + int(line)
+    print(total)
