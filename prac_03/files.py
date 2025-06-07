@@ -2,3 +2,6 @@
 # Use open and close for this question.
 FILENAME = "name.txt"
 name = input("Enter name: ")
+out_file = open(FILENAME, "a")
+print(name, file=out_file)
+out_file.close()
