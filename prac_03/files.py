@@ -23,3 +23,5 @@ FILENAME = "numbers.txt"
 with open(FILENAME, "r") as in_file:
     first_number = int(in_file.readline())
     second_number = int(in_file.readline())
+    total_number = first_number + second_number
+    print(total_number)
