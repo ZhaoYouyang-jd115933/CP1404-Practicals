@@ -22,7 +22,10 @@ print(random.uniform(2.5, 5.5))  # line 3
 # The smallest number is close to 2.5, but it can not be exactly 2.5
 # The largest number is close to 5.5, but it can not be exactly 5.5
 
-
+# Write code, not a comment, to produce a random number between 1 and 100 inclusive.
+import random
+random_number = random.randint(1, 100)
+print(random_number)
 
 
 
