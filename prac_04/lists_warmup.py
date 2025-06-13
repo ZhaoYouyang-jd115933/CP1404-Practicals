@@ -16,3 +16,5 @@ numbers[-1] = 1
 print(numbers)
 # 3.Print all the elements from numbers except the first two (slice)
 print(numbers[2:])
+# 4.Print whether 9 is an element of numbers
+print(9 in numbers)
