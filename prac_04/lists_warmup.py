@@ -14,3 +14,5 @@ numbers[0] = "ten"
 # 2.Change the last element of numbers to 1
 numbers[-1] = 1
 print(numbers)
+# 3.Print all the elements from numbers except the first two (slice)
+print(numbers[2:])
