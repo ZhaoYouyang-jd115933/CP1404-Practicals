@@ -11,3 +11,4 @@ for number in range(number_of_quick_picks):
         if random_number not in numbers:
             numbers.append(random_number)
     numbers.sort()
+    print(" ".join(f"{number:2}" for number in numbers))
