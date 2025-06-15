@@ -5,11 +5,11 @@ Data file -> lists program
 
 FILENAME = "subject_data.txt"
 
-
 def main():
+    """Print all the data in a nested list and print subject details"""
     data = load_data()
     print(data)
-
+    display_subject_details(data)
 
 def load_data():
     """Read each line of data from the file and return all the data in a list"""
@@ -23,5 +23,10 @@ def load_data():
     input_file.close()
     return subject_data
 
+def display_subject_details(subject_data):
+    """Display subject details"""
+    for data in subject_data:
+        code, teacher, number_of_students = data
+        print(f"{code} is taught by {teacher} and has {number_of_students} students")
 
 main()
