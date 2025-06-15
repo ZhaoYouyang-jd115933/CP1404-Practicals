@@ -8,3 +8,5 @@ for number in range(number_of_quick_picks):
     numbers = []
     while len(numbers) < NUMBER_OF_EACH_LINE:
         random_number = random.randint(MINIMUM_NUMBER, MAXIMUM_NUMBER)
+        if random_number not in numbers:
+            numbers.append(random_number)
