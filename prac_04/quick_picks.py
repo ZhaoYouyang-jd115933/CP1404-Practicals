@@ -10,3 +10,4 @@ for number in range(number_of_quick_picks):
         random_number = random.randint(MINIMUM_NUMBER, MAXIMUM_NUMBER)
         if random_number not in numbers:
             numbers.append(random_number)
+    numbers.sort()
