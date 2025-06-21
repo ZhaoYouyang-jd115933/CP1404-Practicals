@@ -5,5 +5,13 @@ COLOURS = {"Absolute Zero": "#0048ba", "Acid Green": "#b0bf1a", "AliceBlue": "#f
 for name in COLOURS:
     print(f"{name:16} is {COLOURS[name]}")
 
+colour_name = input("Enter short state: ").title()
+while colour_name != "":
+    try:
+        print(colour_name, "is", COLOURS[colour_name])
+    except KeyError:
+        print("Invalid short state")
+    colour_name = input("Enter short state: ").title()
+
 
 
