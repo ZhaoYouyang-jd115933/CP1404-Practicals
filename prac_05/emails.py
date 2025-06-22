@@ -1,16 +1,18 @@
 def main():
+    """Collect emails and names in a dictionary and print the results."""
     email_to_name = {}
     email = input("Email: ")
     while email != "":
         user_name = extract_name_from_email(email)
-        choice = input(f"Is your name {user_name}? (Y/n)")
+        choice = input(f"Is your name {user_name}? (Y/n)").upper()
         if choice == "Y" or choice == "":
-            user_name = email_to_name[email]
+            name = user_name
         else:
-            real_name = input("Name: ")
-            email_to_name[email] = real_name
+            name = input("Name: ")
+        email_to_name[email] = name
         email = input("Email: ")
 
+    print()
     for email in email_to_name:
         print(f"{email_to_name[email]} ({email})")
 
