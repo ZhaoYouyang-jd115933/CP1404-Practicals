@@ -7,13 +7,13 @@ for name in COLOUR_TO_CODE:
 
 colour_to_code_lowercase = {name.lower(): COLOUR_TO_CODE[name] for name in COLOUR_TO_CODE}
 
-colour_name = input("Enter short state: ")
+colour_name = input("Enter short state: ").lower()
 while colour_name != "":
     try:
-        print(colour_name, "is", COLOUR_TO_CODE[colour_name])
+        print(colour_name.title(), "is", colour_to_code_lowercase[colour_name])
     except KeyError:
         print("Invalid short state")
-    colour_name = input("Enter short state: ")
+    colour_name = input("Enter short state: ").lower()
 
 
 
