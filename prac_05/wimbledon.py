@@ -3,7 +3,9 @@ FILENAME = "wimbledon.csv"
 def main():
     records = load_data()
     champions_to_count = count_champions(records)
-    print(champions_to_count)
+    countries = get_countries(records)
+    print(countries)
+
 
 def load_data():
     """Convert data in file into a list of lists"""
@@ -26,6 +28,12 @@ def count_champions(records):
             champions_to_count[champion] = 1
     return champions_to_count
 
+def get_countries(records):
+    countries = set()
+    for data_parts in records:
+        champion_country = data_parts[1]
+        countries.add(champion_country)
+    return countries
 main()
 
 
