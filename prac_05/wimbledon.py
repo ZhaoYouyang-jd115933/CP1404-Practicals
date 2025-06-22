@@ -19,9 +19,9 @@ def load_data():
 
 def count_champions(records):
     """Extract champion name and count how many times they have won."""
+    champions = extract_champion_and_country(records, 2)
     champions_to_count = {}
-    for data_parts in records:
-        champion = data_parts[2]
+    for champion in champions:
         if champion in champions_to_count:
             champions_to_count[champion] += 1
         else:
@@ -29,11 +29,17 @@ def count_champions(records):
     return champions_to_count
 
 def get_countries(records):
-    countries = set()
-    for data_parts in records:
-        champion_country = data_parts[1]
-        countries.add(champion_country)
+    """Get countries of all champions in a set"""
+    countries_list = (extract_champion_and_country(records, 1))
+    countries = set(countries_list)
     return countries
+
+def extract_champion_and_country(records, index):
+    """Extract champion and country from records and store each value in a separate list"""
+    items = []
+    for data_parts in records:
+        items.append(data_parts[index])
+    return items
 main()
 
 
