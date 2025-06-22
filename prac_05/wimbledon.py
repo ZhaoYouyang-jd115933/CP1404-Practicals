@@ -11,7 +11,7 @@ def load_data():
     with open(FILENAME, "r", encoding="utf-8-sig") as in_file:
         lines = in_file.readlines()[1:]
         for line in lines:
-            data_parts = line.strip().split(", ")
+            data_parts = line.strip().split(",")
             records.append(data_parts)
     return records
 
