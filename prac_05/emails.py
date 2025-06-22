@@ -11,6 +11,9 @@ def main():
             email_to_name[email] = real_name
         email = input("Email: ")
 
+    for email in email_to_name:
+        print(f"{email_to_name[email]} ({email})")
+
 def extract_name_from_email(email):
     """Extract a name from the email"""
     name = email.split('@')[0]
@@ -18,3 +21,5 @@ def extract_name_from_email(email):
     name_parts = [part.title() for part in name_parts]
     name = ' '.join(name_parts)
     return name
+
+main()
