@@ -9,3 +9,11 @@ def main():
             real_name = input("Name: ")
             email_to_name[email] = real_name
         email = input("Email: ")
+
+def extract_name_from_email(email):
+    """Extract a name from the email"""
+    name = email.split('@')[0]
+    name_parts = name.split('.')
+    name_parts = [part.title() for part in name_parts]
+    name = ' '.join(name_parts)
+    return name
