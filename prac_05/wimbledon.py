@@ -4,8 +4,9 @@ def main():
     records = load_data()
     champions_to_count = count_champions(records)
     countries = get_countries(records)
-    print(countries)
-
+    print("Wimbledon Champions:")
+    for champion in champions_to_count:
+        print(f"{champion} {champions_to_count[champion]}")
 
 def load_data():
     """Convert data in file into a list of lists"""
