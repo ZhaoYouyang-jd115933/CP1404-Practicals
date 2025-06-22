@@ -1,12 +1,17 @@
 FILENAME = "wimbledon.csv"
 
 def main():
+    """Print the number of wins of champions and print countries of all the champions in alphabetical order"""
     records = load_data()
     champions_to_count = count_champions(records)
     countries = get_countries(records)
     print("Wimbledon Champions:")
     for champion in champions_to_count:
         print(f"{champion} {champions_to_count[champion]}")
+
+    sorted_countries = sorted(countries)
+    print(f"These {len(countries)} countries have won Wimbledon:")
+    print(", ".join(sorted_countries))
 
 def load_data():
     """Convert data in file into a list of lists"""
