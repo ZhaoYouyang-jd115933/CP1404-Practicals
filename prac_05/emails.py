@@ -2,6 +2,7 @@ def main():
     email_to_name = {}
     email = input("Email: ")
     while email != "":
+        user_name = extract_name_from_email(email)
         choice = input(f"Is your name {user_name}? (Y/n)")
         if choice == "Y" or choice == "":
             user_name = email_to_name[email]
