@@ -1,3 +1,8 @@
+"""
+Word Occurrences
+Estimate: 20 minutes
+Actual:   23 minutes
+"""
 from prac_06.programming_language import ProgrammingLanguage
 python = ProgrammingLanguage("Python", "Dynamic", True, 1991)
 ruby = ProgrammingLanguage("Ruby", "Dynamic", True, 1995)
