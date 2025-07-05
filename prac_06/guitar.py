@@ -4,6 +4,7 @@ Estimate: 20 minutes
 Actual:   25 minutes
 """
 CURRENT_YEAR = 2022
+AGE_THRESHOLD = 50
 class Guitar:
     def __init__(self, name="", year=0, cost=0):
         """Initialise Guitar instance"""
@@ -23,7 +24,7 @@ class Guitar:
     def is_vintage(self):
         """Check if the guitar is 50 or more years old"""
         guitar_age = self.get_age()
-        if guitar_age >= 50:
+        if guitar_age >= AGE_THRESHOLD:
             return True
         else:
             return False
