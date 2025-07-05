@@ -12,3 +12,7 @@ class ProgrammingLanguage:
             return True
         else:
             return False
+
+    def __str__(self):
+        """Convert object to a string"""
+        return f"{self.name}, {self.typing} Typing, Reflection={self.reflection}, First appeared in {self.year}"
