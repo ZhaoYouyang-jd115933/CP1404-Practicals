@@ -1,3 +1,8 @@
+"""
+Word Occurrences
+Estimate: 20 minutes
+Actual:   27 minutes
+"""
 class ProgrammingLanguage:
     def __init__(self, name="", typing="", reflection="", year=0):
         """Initialise ProgrammingLanguage instance"""
