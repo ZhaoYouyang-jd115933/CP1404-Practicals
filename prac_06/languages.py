@@ -6,3 +6,11 @@ print(python)
 print(ruby)
 print(visual_basic)
 
+
+program_languages = [python, ruby, visual_basic]
+languages_typing = [language for language in program_languages if language.is_dynamic()]
+
+print("The dynamically typed languages are:")
+for language in languages_typing:
+    print(language.name)
+
