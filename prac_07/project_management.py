@@ -123,3 +123,13 @@ def get_valid_number_allow_empty(prompt, max_number):
         if message == "":
             return None
     return int(message)
+
+def check_date(projects):
+    """Filter projects starting on or after user-entered date."""
+    filtered_projects = []
+    date_string = input("Show projects that start after date (dd/mm/yy): ")
+    input_date = datetime.datetime.strptime(date_string, "%d/%m/%Y").date()
+    for project in projects:
+        if project.date >= input_date:
+            filtered_projects.append(project)
+    return filtered_projects
