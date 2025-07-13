@@ -76,7 +76,6 @@ def category_project(projects):
             incomplete_project.append(project)
     return complete_project, incomplete_project
 
-
 def display_projects(projects):
     """Display incomplete and completed projects, sorted by priority."""
     complete_projects, incomplete_projects = category_project(projects)
@@ -88,3 +87,39 @@ def display_projects(projects):
     print("Completed projects:")
     for project in sorted(complete_projects, key=attrgetter("priority")):
         print(f"  {project}")
+
+def update_project(projects):
+    """Allow user to select a project and update its completion and priority."""
+    for index, project in enumerate(projects):
+        print(f"{index} {project}")
+    update_choice = get_valid_number("Project choice", len(projects) - 1)
+    selected_project = projects[update_choice]
+    print(selected_project)
+
+    new_percentage = get_valid_number_allow_empty("New Percentage", MAX_NUMBER)
+    if new_percentage is not None:
+        selected_project.completion_percentage = new_percentage
+
+    new_priority = get_valid_number_allow_empty("New Priority", MAX_PRIORITY)
+    if new_priority is not None:
+        selected_project.priority = new_priority
+
+def get_valid_number(prompt, max_number):
+    """Prompt for integer in valid range."""
+    message = input(f"{prompt}: ")
+    while not message.isdigit() or int(message) < MIN_NUMBER or int(message) > max_number:
+        print(f"Invalid input; enter a number between {MIN_NUMBER} and {max_number}")
+        message = input(f"{prompt}: ")
+    return int(message)
+
+def get_valid_number_allow_empty(prompt, max_number):
+    """Allow user to skip by pressing Enter, or enter a valid number"""
+    message = input(f"{prompt}: ").strip()
+    if message == "":
+        return None
+    while not message.isdigit() or int(message) < MIN_NUMBER or int(message) > max_number:
+        print(f"Invalid input; enter a number between {MIN_NUMBER} and {max_number}")
+        message = input(f"{prompt}: ").strip()
+        if message == "":
+            return None
+    return int(message)
