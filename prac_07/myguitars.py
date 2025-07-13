@@ -2,8 +2,12 @@ import csv
 from prac_07.guitar import Guitar
 
 def main():
+    """Print guitar sorted by year"""
     add_guitars()
     guitars = read_file()
+    guitars.sort()
+    for guitar in guitars:
+        print(guitar)
 
 def add_guitars():
     """Put all new guitars in a list based on the user input"""
