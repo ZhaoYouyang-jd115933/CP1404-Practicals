@@ -64,3 +64,27 @@ def save_projects(projects, filename):
         out_file.write("Name\tStart Date\tPriority\tCost Estimate\tCompletion Percentage\n")
         for project in projects:
             out_file.write(Project.change_string(project) + "\n")
+
+def category_project(projects):
+    """Classify projects into complete and incomplete."""
+    complete_project = []
+    incomplete_project = []
+    for project in projects:
+        if project.is_complete():
+            complete_project.append(project)
+        else:
+            incomplete_project.append(project)
+    return complete_project, incomplete_project
+
+
+def display_projects(projects):
+    """Display incomplete and completed projects, sorted by priority."""
+    complete_projects, incomplete_projects = category_project(projects)
+
+    print("Incomplete projects:")
+    for project in sorted(incomplete_projects, key=attrgetter("priority")):
+        print(f"  {project}")
+
+    print("Completed projects:")
+    for project in sorted(complete_projects, key=attrgetter("priority")):
+        print(f"  {project}")
