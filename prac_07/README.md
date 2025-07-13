@@ -1,5 +1,4 @@
 # Practical 07
-# CP1404 Practicals
 
 Welcome to my CP1404 Practicals repository.  
 This repo contains the practical exercises for the subject CP1404 - Programming II at JCU.  
@@ -21,5 +20,5 @@ I hope this will help me build good habits for writing professional code in the 
 
 ## Helpful Links
 
-- **Programming Patterns**[Programming Patterns page](https://github.com/CP1404/Starter/wiki/Programming-Patterns)
-- **CP1404 Practicals Instructions Repo**[CP1404 Practicals Instructions Repo](https://github.com/CP1404/Practicals)
+- **Programming Patterns** - [Programming Patterns page](https://github.com/CP1404/Starter/wiki/Programming-Patterns)
+- **CP1404 Practicals Instructions Repo** - [CP1404 Practicals Instructions Repo](https://github.com/CP1404/Practicals)
