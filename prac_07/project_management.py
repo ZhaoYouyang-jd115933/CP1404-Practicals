@@ -133,3 +133,16 @@ def check_date(projects):
         if project.date >= input_date:
             filtered_projects.append(project)
     return filtered_projects
+
+def add_new_project(projects):
+    """Add a new project to the current list (not saved yet)."""
+    print("Let's add a new project")
+    name = input("Name: ")
+    date = input("Start date (dd/mm/yy): ")
+    priority = get_valid_number("Priority", MAX_PRIORITY)
+    cost = float(input("Cost estimate: $"))
+    completion_percentage = get_valid_number("Percent complete", MAX_NUMBER)
+    project = Project(name, date, priority, cost, completion_percentage)
+    projects.append(project)
+
+main()
