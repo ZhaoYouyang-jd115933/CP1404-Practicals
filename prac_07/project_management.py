@@ -87,17 +87,17 @@ def category_project(projects):
             incomplete_project.append(project)
     return complete_project, incomplete_project
 
+def print_projects(title, projects):
+    """Print a list of projects with a title, sorted by priority."""
+    print(f"{title}:")
+    for project in sorted(projects, key=attrgetter("priority")):
+        print(f"  {project}")
+
 def display_projects(projects):
     """Display incomplete and completed projects, sorted by priority."""
     complete_projects, incomplete_projects = category_project(projects)
-
-    print("Incomplete projects:")
-    for project in sorted(incomplete_projects, key=attrgetter("priority")):
-        print(f"  {project}")
-
-    print("Completed projects:")
-    for project in sorted(complete_projects, key=attrgetter("priority")):
-        print(f"  {project}")
+    print_projects("Incomplete projects", incomplete_projects)
+    print_projects("Completed projects", complete_projects)
 
 def update_project(projects):
     """Allow user to select a project and update its completion and priority."""
