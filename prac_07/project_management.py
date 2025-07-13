@@ -1,3 +1,8 @@
+"""
+Project Management
+Estimate: 4 hours
+Actual:   6 hours
+"""
 
 import datetime
 from operator import attrgetter
@@ -46,6 +51,12 @@ def main():
             update_project(projects)
         print(MENU)
         choice = input(">>> ").upper()
+
+    save_choice = input(f"Would you like to save to {file_name}? ")
+    if save_choice == "Y":
+        save_projects(projects, file_name)
+        print("Projects saved.")
+    print("Thank you for using custom-built project management software.")
 
 def load_projects(file_name):
     """Load projects from file into a list of Project objects."""
