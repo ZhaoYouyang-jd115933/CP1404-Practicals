@@ -6,13 +6,12 @@ MILES_TO_KM = 1.60934
 
 class ConvertMilesApp(App):
     """Kivy app for converting miles to kilometers."""
-    convert_result = StringProperty()
+    convert_result = StringProperty('0.0')
     def build(self):
         """Build the kivy app GUI and initialize default values."""
         Window.size = (400, 250)
         self.title = "Convert Miles to Kilometers"
         self.root = Builder.load_file("convert_miles_km.kv")
-        self.convert_result = "0.0"
         return self.root
 
     def handle_calculate(self):
@@ -36,4 +35,5 @@ class ConvertMilesApp(App):
             return 0
 
 ConvertMilesApp().run()
+
 
