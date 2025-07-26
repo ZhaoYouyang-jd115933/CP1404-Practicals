@@ -11,4 +11,15 @@ def main():
     print(standard)
     print()
 
+    # Test fare calculation
+    print("Fare tests:")
+    hummer.drive(10)
+    print(f"Hummer runs 10km: {hummer}")
+    print(f"Fare: ${hummer.get_fare():.2f}")
+
+    standard.drive(18)
+    print(f"Standard runs 18km: {standard}")
+    print(f"Fare: ${standard.get_fare():.2f}")
+    print()
+
 main()
