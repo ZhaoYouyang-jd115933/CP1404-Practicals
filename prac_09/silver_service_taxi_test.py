@@ -22,4 +22,16 @@ def main():
     print(f"Fare: ${standard.get_fare():.2f}")
     print()
 
+    # Assert tests
+    print("Running assert tests:")
+    standard.start_fare()
+    standard.drive(18)
+    assert round(standard.get_fare(), 2) == 48.78
+
+    hummer.start_fare()
+    hummer.drive(10)
+    assert round(hummer.get_fare(), 4) == 53.70
+
+    print("All assert tests successfully!")
+
 main()
