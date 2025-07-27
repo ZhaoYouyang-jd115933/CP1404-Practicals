@@ -18,10 +18,13 @@ def main():
     while choice != "q":
         if choice == "c":
             current_taxi = choose_taxi(taxis)
+            display_bill(total_bill)
         elif choice == "d":
             total_bill = handle_drive(current_taxi, total_bill)
+            display_bill(total_bill)
         else:
             print("Invalid option")
+            display_bill(total_bill)
 
         print(MENU)
         choice = input(">>> ").lower()
@@ -61,4 +64,16 @@ def drive_taxi(current_taxi):
     except ValueError:
         print("Invalid input")
         return 0
+
+def handle_drive(current_taxi, total_bill):
+    """Handle driving the selected taxi and update total bill."""
+    if current_taxi is None:
+        print("You need to choose a taxi before you can drive")
+    else:
+        total_bill += drive_taxi(current_taxi)
+    return total_bill
+
+def display_bill(total_bill):
+    """Display current total bill"""
+    print(f"Bill to date: ${total_bill:.2f}")
 main()
