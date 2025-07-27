@@ -29,6 +29,10 @@ def main():
         print(MENU)
         choice = input(">>> ").lower()
 
+    print(f"Total trip cost: ${total_bill:.2f}")
+    print("Taxis are now:")
+    display_taxis(taxis)
+
 def choose_taxi(taxis):
     """Display the list of taxis and let the user choose one."""
     print("Taxis available:")
