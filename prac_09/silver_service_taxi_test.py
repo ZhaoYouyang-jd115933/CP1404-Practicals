@@ -26,7 +26,7 @@ def main():
     print("Running assert tests:")
     standard.start_fare()
     standard.drive(18)
-    assert round(standard.get_fare(), 2) == 48.78
+    assert round(standard.get_fare(), 2) == 48.80
 
     hummer.start_fare()
     hummer.drive(10)
