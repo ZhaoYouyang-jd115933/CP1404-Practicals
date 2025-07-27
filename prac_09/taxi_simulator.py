@@ -48,4 +48,17 @@ def display_taxis(taxis):
     for i in range(len(taxis)):
         print(f"{i} - {taxis[i]}")
 
+def drive_taxi(current_taxi):
+    """Ask the user how far they want to drive the selected taxi and show the trip cost."""
+    try:
+        distance = int(input("Drive how far? "))
+
+        current_taxi.drive(distance)
+        trip_cost = current_taxi.get_fare()
+        print(f"Your {current_taxi.name} trip cost you ${trip_cost:.2f}")
+        return trip_cost
+
+    except ValueError:
+        print("Invalid input")
+        return 0
 main()
