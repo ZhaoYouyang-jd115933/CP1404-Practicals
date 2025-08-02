@@ -12,6 +12,8 @@ def repeat_string(s, n):
     return " ".join([s] * n)
 
 
+# TODO: 4. Fix the failing is_long_word function
+# (Don't change the tests, change the function!)
 def is_long_word(word, length=5):
     """
     Determine if the word is as long or longer than the length passed in
@@ -22,7 +24,33 @@ def is_long_word(word, length=5):
     >>> is_long_word("Python", 6)
     True
     """
-    return len(word) > length
+    return len(word) >= length
+
+# TODO: 5. Write and test a function to format a phrase as a sentence,
+# starting with a capital and ending with a single full stop.
+# Important: start with a function header and just use pass as the body
+# then add doctests for 3 tests:
+#   'hello' -> 'Hello.'
+#   'It is an ex parrot.' -> 'It is an ex parrot.'
+# and one more that you decide is a useful test.
+# Run your doctests and watch the tests fail.
+# Then write the body of the function so that the tests pass.
+def format_phrase(phrase):
+    """
+    Format a phrase as a sentence.
+    >>> format_phrase('hello')
+    'Hello.'
+    >>> format_phrase('It is an ex parrot.')
+    'It is an ex parrot.'
+    >>> format_phrase('this is a useful test.')
+    'This is a useful test.'
+    """
+    phrase = phrase.strip()
+    if phrase:
+        phrase = phrase[0].upper() + phrase[1:]
+        if not phrase.endswith('.'):
+            phrase = phrase + '.'
+    return phrase
 
 
 def run_tests():
@@ -56,17 +84,7 @@ run_tests()
 
 # TODO: 3. Uncomment the following line and run the doctests
 # (PyCharm may see your >>> doctest comments and run doctests anyway.)
-# doctest.testmod()
+doctest.testmod()
 
-# TODO: 4. Fix the failing is_long_word function
-# (Don't change the tests, change the function!)
 
-# TODO: 5. Write and test a function to format a phrase as a sentence,
-# starting with a capital and ending with a single full stop.
-# Important: start with a function header and just use pass as the body
-# then add doctests for 3 tests:
-#   'hello' -> 'Hello.'
-#   'It is an ex parrot.' -> 'It is an ex parrot.'
-# and one more that you decide is a useful test.
-# Run your doctests and watch the tests fail.
-# Then write the body of the function so that the tests pass.
+
